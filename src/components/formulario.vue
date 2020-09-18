@@ -3,6 +3,7 @@
         <p>Nome:{{addd.nome}}</p>
         <p>Email:{{addd.email}}</p>
         <p>Idade:{{addd.idade}}</p>
+        <button @click="emitirsalvar()" class="btn btn-primary">Salvar</button>
         <button @click="emitirecentosdeletar()" class="btn btn-primary">Deletar</button>
     </div>
 </template>
@@ -22,7 +23,11 @@ export default {
         emitirecentosdeletar: function(){
         console.log("Emitindo do filho");
         this.$emit("deletar",{idcliente:this.addd.id});
-    }
+        },
+        emitirsalvar: function(){
+            console.log('Salvar')
+            this.$emit("salvar",{idcliente:this.addd.id})
+        }
     }
 }
 </script>

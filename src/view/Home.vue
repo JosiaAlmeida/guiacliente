@@ -9,7 +9,7 @@
     <button @click="cadastrar" class="btn btn-warning">Cadastrar</button>
     <hr>
     <div v-for="add in ordenarpelonome" :key="add.id">
-      <formulario :addd="add" @deletar="deletarusuario($event)"/>
+      <formulario :addd="add" @deletar="deletarusuario($event)" @salvar="salvo($event)"/>
       <hr>
     </div>
     
@@ -50,7 +50,7 @@ export default {
   },
   methods:{
     cadastrar: function(){
-      if(this.nomefield=="" || this.emailfield=="" || this.nomefield.length<3|| this.emailfield.length<3){
+      if(this.nomefield=="" || this.emailfield=="" || this.nomefield.length<=3|| this.emailfield.length<=7){
         this.error=true;
       }else if(this.idadefield>=150){
         this.error=true;
@@ -69,6 +69,13 @@ export default {
       var id= $event.idcliente
       var novoarray=this.adicionar.filter(add  => add.id != id)
       this.adicionar=novoarray;
+    },
+    salvo: function($event){
+        console.log('Salvo')
+        console.log($event);
+        var id =$event.idcliente
+        var salarray= this.adicionar.filter(add=> add.id == id)
+        this.adicionar=salarray
     }
   },
   computed:{

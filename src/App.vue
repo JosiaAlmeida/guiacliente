@@ -11,8 +11,8 @@
           <img src="@/assets/logo.png" alt="Logo" class="responsive logo">
         </section>-->
         <section class="navbar-section">
-          <a href="" class="btn btn-link">Twitter</a>
-          <a href="" class="btn btn-link">Twitter</a>
+          <a  class="btn btn-link">Twitter</a>
+          <a  class="btn btn-link">Twitter</a>
         </section>
       </header>
       <router-view />
@@ -27,6 +27,6 @@
 
 <style scoped>
  .logo{
-   max-widows: 100px;
+   max-width: 100px;
  }
 </style>
