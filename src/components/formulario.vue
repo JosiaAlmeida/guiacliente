@@ -3,7 +3,7 @@
         <p>Nome:{{addd.nome}}</p>
         <p>Email:{{addd.email}}</p>
         <p>Idade:{{addd.idade}}</p>
-        <button @click="emitirecentosdeletar()">Deletar</button>
+        <button @click="emitirecentosdeletar()" class="btn btn-primary">Deletar</button>
     </div>
 </template>
 
